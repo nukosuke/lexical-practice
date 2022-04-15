@@ -4,6 +4,7 @@ import LexicalPlainTextPlugin from '@lexical/react/LexicalPlainTextPlugin'
 import LexicalContentEditable from '@lexical/react/LexicalContentEditable'
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import LexicalOnChangePlugin from '@lexical/react/LexicalOnChangePlugin'
+import LexicalAutoFocusPlugin from '@lexical/react/LexicalAutoFocusPlugin'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 
 const Editor: NextPage = () => {
@@ -20,6 +21,7 @@ const Editor: NextPage = () => {
       />
       <LexicalOnChangePlugin onChange={() => { }} />
       <HistoryPlugin />
+      <LexicalAutoFocusPlugin />
     </LexicalComposer>
   )
 }
