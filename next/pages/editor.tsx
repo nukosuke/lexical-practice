@@ -10,7 +10,9 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 const Editor: NextPage = () => {
   const initialConfig = {
     theme: {},
-    onError: () => { },
+    onError: (err: Error) => {
+      throw err
+    },
   }
 
   return (
