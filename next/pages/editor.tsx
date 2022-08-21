@@ -1,14 +1,14 @@
 import { NextPage } from "next";
-import LexicalComposer from '@lexical/react/LexicalComposer'
-import LexicalPlainTextPlugin from '@lexical/react/LexicalPlainTextPlugin'
-import LexicalContentEditable from '@lexical/react/LexicalContentEditable'
+import { LexicalComposer } from '@lexical/react/LexicalComposer'
+import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin'
+import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
-import LexicalOnChangePlugin from '@lexical/react/LexicalOnChangePlugin'
-import LexicalAutoFocusPlugin from '@lexical/react/LexicalAutoFocusPlugin'
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin'
+import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
 
 const Editor: NextPage = () => {
   const initialConfig = {
+    namespace: 'lexical-practice',
     theme: {},
     onError: (err: Error) => {
       throw err
@@ -17,13 +17,13 @@ const Editor: NextPage = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <LexicalPlainTextPlugin
-        contentEditable={<LexicalContentEditable />}
+      <PlainTextPlugin
+        contentEditable={<ContentEditable />}
         placeholder={<div>placeholder ...</div>}
       />
-      <LexicalOnChangePlugin onChange={() => { }} />
+      <OnChangePlugin onChange={() => { }} />
       <HistoryPlugin />
-      <LexicalAutoFocusPlugin />
+      <AutoFocusPlugin />
     </LexicalComposer>
   )
 }
